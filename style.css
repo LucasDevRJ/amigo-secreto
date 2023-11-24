@@ -42,7 +42,7 @@ body {
   left: 50%;
   margin: 0 auto;
   position: absolute;
-  top: 50%;
+  top: 60%;
   transform: translate(-50%, -50%);
   width: 75%;
   z-index: 1;
