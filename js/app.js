@@ -3,15 +3,19 @@ var amigosForamSorteados = false;
 
 function adicionar() {
     let amigo = document.getElementById("nome-amigo").value;
-    
-    if (amigo.length == 0) {
-        alert("Digite o nome do amigo!!");
-    } else {
-        listaDeAmigos.push(amigo);
 
-        let lista = document.getElementById("lista-amigos");
-        lista.innerHTML = listaDeAmigos;
-        document.getElementById("nome-amigo").value = "";
+    if (amigosForamSorteados == false) {
+        if (amigo.length == 0) {
+            alert("Digite o nome do amigo!!");
+        } else {
+            listaDeAmigos.push(amigo);
+    
+            let lista = document.getElementById("lista-amigos");
+            lista.innerHTML = listaDeAmigos;
+            document.getElementById("nome-amigo").value = "";
+        }
+    } else {
+        alert("Amigos já foram sorteados, reinicie o jogo para sortear novamente!!");
     }
 }
 
