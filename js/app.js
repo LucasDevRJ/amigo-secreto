@@ -3,13 +3,14 @@ var amigosForamSorteados = false;
 
 function adicionar() {
     let amigo = document.getElementById("nome-amigo").value;
-
+    amigo = amigo.trim();
     if (amigosForamSorteados == false) {
         if (amigo.length == 0) {
             alert("Digite o nome do amigo!!");
+        } else if (listaDeAmigos.includes(amigo)) {
+            alert("Amigo já foi adicionado!!");
         } else {
             listaDeAmigos.push(amigo);
-    
             let lista = document.getElementById("lista-amigos");
             lista.innerHTML = listaDeAmigos;
             document.getElementById("nome-amigo").value = "";
@@ -20,7 +21,7 @@ function adicionar() {
 }
 
 function sortear() {
-    if (listaDeAmigos.length != 0) {
+    if (listaDeAmigos.length >= 3) {
         if (amigosForamSorteados == false) {
             listaDeAmigos.sort();
             let amigosEmbaralhados = document.getElementById("lista-sorteio");
@@ -39,7 +40,7 @@ function sortear() {
             alert("Amigos já foram sorteados, reinicie o jogo para sortear novamente!!");
         }
     } else {
-        alert("Adicione amigos para poder sortear!!");
+        alert("Adicione pelo menos 3 amigos para poder sortear!!");
     }
 }
 
